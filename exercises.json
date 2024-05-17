@@ -1,0 +1,83 @@
+[
+    {
+        "type": 1,
+        "id": 1,
+        "text1": "Macbeth and Banquo are",
+        "solution": "generals",
+        "text2": "of King Dunkan."
+    },
+    {
+        "type": 1,
+        "id": 2,
+        "text1": "Lady macbeth is more",
+        "solution": "determined",
+        "text2": "than Macbeth to become queen of Scotland."
+    },
+    {
+        "type": 1,
+        "id": 3,
+        "text1": "Machbeth is the",
+        "solution": "title",
+        "text2": "character."
+    },
+    {
+        "type": 1,
+        "id": 4,
+        "text1": "Macbeth starts to see Banquo's",
+        "solution": "ghost",
+        "text2": "."
+    },
+    {
+        "type": 1,
+        "id": 5,
+        "text1": "Macbeth is",
+        "solution": "killed",
+        "text2": "by Banquo."
+    },
+    {
+        "type": 1,
+        "id": 6,
+        "text1": "Donalbaind and Malcom are",
+        "solution": "sons",
+        "text2": "of King Duncan."
+    },
+
+
+
+    {
+        "type": 2,
+        "id": 1,
+        "text": "Lady Machbeth was shocked by the death of king Duncan.",
+        "solution": false
+    },
+    {
+        "type": 2,
+        "id": 2,
+        "text": "The three witches said that Banquo would become king.",
+        "solution": false
+    },
+    {
+        "type": 2,
+        "id": 3,
+        "text": "Macbeth was not the legitimate king of Scotland.",
+        "solution": true
+    },
+    {
+        "type": 2,
+        "id": 4,
+        "text": "Macduff was born to a woman.",
+        "solution": false
+    },
+    {
+        "type": 2,
+        "id": 5,
+        "text": "Macbeth was not a wise and peaceful king.",
+        "solution": true
+    },
+    {
+        "type": 2,
+        "id": 6,
+        "text": "Lady Macbeth committed suicide out of guilt.",
+        "solution": true
+    }
+]

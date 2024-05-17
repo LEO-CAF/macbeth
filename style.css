@@ -12,9 +12,10 @@
     --primaryColor: blue;
     --secondaryColor: skyblue;
     --tertiaryColor: black;
+    --textBorder: .1vh;
 }
 
-/* ELEMENTS PAGE */
+/* BOXPAGE */
 
 header {
     width: 100vw;
@@ -38,13 +39,6 @@ header img {
     
     position: absolute;
     right: 5vh;
-}
-
-nav {
-    background-color: darkgray;
-
-    width: 100vw;
-    height: 6vh;
 }
 
 main {
@@ -86,19 +80,25 @@ footer span {
     margin-bottom: 1vh;
     border-radius: 50px;
     background-color: var(--primaryColor);
+    border: .2vh solid black;
+    box-shadow: 3px 3px 30px 0px black;
 
     position: relative;
     right: 22vh;
-    transition: right 1s;
 
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    transition: right 1s, background-color .2s, scale .2s;
 }
 
 #menu .box:hover {
+    background-color: var(--secondaryColor);
+    scale: 1.1;
     right: 10vh;
-    transition: right 1s;
+
+    transition: right 1s, background-color .2s, scale .2s;
 }
 
 #menu .box .icon {
@@ -112,13 +112,62 @@ footer span {
     margin-right: 1vh;
 }
 
+/* NAVPAGE */
+
+#navpage {
+    width: 17vh;
+    height: 8vh;
+
+    position: absolute;
+    bottom: 4vh;
+    right: 4vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navpage .box {
+    width: 8vh;
+    height: 8vh;
+    display: inline-block;
+
+    background-color: var(--primaryColor);
+    border-radius: 50%;
+    border: .2vh solid black;
+    box-shadow: 3px 3px 30px 0px black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color .3s, scale .3s;
+}
+
+#navpage .box:hover {
+    background-color: var(--secondaryColor);
+    scale: 1.2;
+
+    transition: all .6s;
+}
+
+#navpage .box img {
+    width: 100%;
+    filter: brightness(0) invert(1);
+}
+
+#navpage .box:last-child img {
+    rotate: 180deg;
+}
+
 /* SELECTOR */
 
 #selector {
-    background-color: brown;
-
     width: 40vh;
     height: 40vh;
+
+    border-radius: 5vh;
+    background-color: brown;
 
     position: absolute;
     left: 50%;
@@ -129,9 +178,9 @@ footer span {
 #selector .selectorBox {
     width: 16vh;
     height: 8vh;
+
     border-radius: 50%;
     background-color: white;
-    
     transform-origin: right;
 
     position: absolute;
@@ -141,7 +190,7 @@ footer span {
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 
 #selector .selectorBox:nth-of-type(1) { rotate: calc(360 / var(--numberOfPetals) * 1deg); }
@@ -161,12 +210,16 @@ footer span {
 
 #selector .selectorBox .selectorText {
     font-size: 2vh;
+    margin-left: 2vh;
+    text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
+
     display: none;
 }
 
 #selector #center {
     width: 8vh;
     height: 8vh;
+
     border-radius: 50%;
     background-color: yellow;
 
@@ -176,13 +229,11 @@ footer span {
     translate: -50% -50%;
 }
 
-/* HISTORY */
+/* PAGE */
 
-#history {
-    background-color: lightcoral;
-
+.page {
     width: 80vw;
-    height: 70vh;
+    height: 80vh;
 
     position: absolute;
     left: 50%;
@@ -190,91 +241,101 @@ footer span {
     transform: translate(-50%, -50%);
 }
 
-#history .box {
+.page .title {
     width: 100%;
-    height: 6vh;
-    background-color: lightgray;
-    padding: 2vh;
+    height: 7.5vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#history .box .text {
+.page .title .text {
+    font-size: 4vh;
+    text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
+}
+
+/* HISTORY */
+
+#history .content {
+    width: 100%;
+    height: calc(80vh - 7.5vh);
+
+    overflow: auto;
+}
+
+#history .content .text {
     font-size: 3vh;
+    text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
 }
 
 /* VIDEOS */
 
-#videos {
-    background-color: lightblue;
-
-    width: 80vw;
-    height: 70vh;
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    transition: display 1s; /* PROBLEMA opacity */
-}
-
-#videos .box {
+#videos .video {
     width: 100%;
-    height: 6vh;
-    background-color: lightgray;
-    padding: 2vh;
+    height: calc(80vh - 7.5vh);
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#videos .box .text {
-    font-size: 3vh;
+#videos .video .window {
+    width: 90%;
+    aspect-ratio: 1.777;
 }
 
 /* EXERCISES */
 
-#exercises {
-    background-color: lightgreen;
+#exercises .page .containerBox {
+    width: 100%;
+    height: calc(80vh - 7.5vh - 6vh);
 
-    width: 80vw;
-    height: 70vh;
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
-#exercises .box {
+#exercises .page .containerBox .box {
     width: 100%;
     height: 6vh;
-    background-color: lightgray;
+
+    margin: .5vh 0vh;
     padding: 2vh;
+    border-radius: 1vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+#exercises .page .containerBox .box .text {
+    font-size: 3vh;
+    text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
+}
+
+#exercises .page .containerBox .box .input {
+    width: 10vh;
+    height: 3vh;
+
+    font-size: 2vh;
+    margin: 0 1vh;
+    text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
+}
+
+#exercises .page .correctBox {
+    width: 100%;
+    height: 6vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#exercises .box .text {
+#exercises .page .correctBox .correctButton {
+    width: 14vh;
+    height: 5vh;
+
     font-size: 3vh;
-}
-
-#exercises .box .input {
-    width: 10vh;
-    height: 3vh;
-    font-size: 2vh;
-    margin: 0 1vh;
-}
-
-#exercises .box #end {
-    width: 10vh;
-    height: 3vh;
-    font-size: 2vh;
-    text-align: center;
+    text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
 }

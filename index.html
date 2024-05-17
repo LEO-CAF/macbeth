@@ -19,52 +19,90 @@
         <img src="icons/book.svg">
     </header>
 
-    <!-- <nav>
-        <span>ciao</span>
-    </nav> -->
-
     <main>
         <div id="history">
-            <div class="box">
-                <span class="text">History</span>
+            <div class="page">
+                <div class="title">
+                    <span class="text">History 1</span>
+                </div>
+                <div id="selector">
+                    <div class="selectorBox">
+                        <span class="selectorText">Plot</span>
+                    </div>
+                    <div class="selectorBox">
+                        <span class="selectorText">Characters</span>
+                    </div>
+                    <div class="selectorBox">
+                        <span class="selectorText">Themes</span>
+                    </div>
+                    <div class="selectorBox">
+                        <span class="selectorText">Atcs</span>
+                    </div>
+                    <div class="selectorBox">
+                        <span class="selectorText">Story</span>
+                    </div>
+                    <div class="selectorBox">
+                        <span class="selectorText">Author</span>
+                    </div>
+                    <div id="center"></div>
+                </div>
             </div>
-            <div id="selector">
-                <div class="selectorBox">
-                    <span class="selectorText">exe 1</span>
+            <div class="page">
+                <div class="title">
+                    <span class="text">History 2</span>
                 </div>
-                <div class="selectorBox">
-                    <span class="selectorText">exe 2</span>
+                <div class="content">
+                    <span class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora hic dolorem dolor eaque labore perspiciatis quia facilis, numquam aliquam nobis sint nemo debitis sapiente nihil ipsa id aperiam soluta odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit eligendi cum velit dicta ab quae quidem placeat! Provident, commodi. Totam atque voluptatibus nisi animi ullam at accusantium aliquam necessitatibus cum! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima nesciunt, labore illum libero error alias hic quo architecto voluptas, aspernatur odio delectus incidunt sed doloribus dolorem, eum neque nam maxime? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque necessitatibus ea illo reiciendis dolor possimus enim hic facilis voluptatem molestias quibusdam, provident iusto, vel ad error incidunt, voluptas maxime impedit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam necessitatibus tenetur labore quasi reiciendis? Architecto debitis deserunt autem voluptatem reprehenderit. Exercitationem, eum. Laboriosam adipisci veniam reprehenderit nam similique nemo id! Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolorem ut pariatur soluta molestiae et maxime eligendi veritatis asperiores sapiente provident in, ex doloremque ratione expedita adipisci reprehenderit harum possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur minima assumenda, illum tempora iste, distinctio voluptatum magnam voluptate enim, facilis esse nobis sed architecto nisi impedit inventore dolore tempore maxime. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dicta quos cupiditate doloremque sapiente totam ab, repudiandae exercitationem inventore vitae corrupti quasi praesentium labore voluptates delectus. Sequi facilis ipsam nihil.</span>
                 </div>
-                <div class="selectorBox">
-                    <span class="selectorText">exe 3</span>
-                </div>
-                <div class="selectorBox">
-                    <span class="selectorText">exe 4</span>
-                </div>
-                <div class="selectorBox">
-                    <span class="selectorText">exe 5</span>
-                </div>
-                <div class="selectorBox">
-                    <span class="selectorText">exe 6</span>
-                </div>
-                <div id="center"></div>
             </div>
         </div>
 
         <div id="videos">
-            <div class="box">
-                <span class="text">Videos</span>
+            <div class="page">
+                <div class="title">
+                    <span class="text">Video 1</span>
+                </div>
+                <div class="video">
+                    <iframe class="window" src="https://www.youtube.com/embed/xvFZjo5PgG0?si=H9746ltFEG19FFrS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="page">
+                <div class="title">
+                    <span class="text">Video 2</span>
+                </div>
+                <div class="video">
+                    <iframe class="window" src="https://www.youtube.com/embed/4GSCWDa1qcE?si=rNOi8NC8GncrpBky" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
 
         <div id="exercises">
-            <div class="box">
-                <span class="text">Exercises</span>
-                <input class="input" type="text">
-                <span class="text">text</span>
+            <div class="page" id="Box1">
+                <div class="title">
+                    <span class="text">Exercises 1</span>
+                </div>
+                <div class="containerBox"></div>
+                <div class="correctBox">
+                    <button class="correctButton" id="Button1" type="button">Correct</button>
+                </div>
             </div>
-            <div class="box">
-                <button id="end" type="button">Click</button>
+            <div class="page" id="Box2">
+                <div class="title">
+                    <span class="text">Exercises 2</span>
+                </div>
+                <div class="containerBox"></div>
+                <div class="correctBox">
+                    <button class="correctButton" id="Button2" type="button">Correct</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="navpage">
+            <div class="box" id="leftButton">
+                <img src="icons/arrow.svg">
+            </div>
+            <div class="box" id="rightButton">
+                <img src="icons/arrow.svg">
             </div>
         </div>
 
@@ -88,6 +126,6 @@
         <span>Leonardo Chiara Francesca</span>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
