@@ -125,7 +125,7 @@ function RightPage() {
 
 /* EXERCISES */
 
-import ExercisesData from "/exercises.json" with {type: "json"};
+import ExercisesData from "./exercises.json" with {type: "json"};
 
 let ExercisesBox1 = document.querySelector("#Box1 .containerBox");
 let ExercisesBox2 = document.querySelector("#Box2 .containerBox");
