@@ -125,7 +125,16 @@ function RightPage() {
 
 /* EXERCISES */
 
-import ExercisesData from "./exercises.json" with {type: "json"};
+/* import ExercisesData from "./exercises.json" with {type: "json"}; */
+
+let ExercisesData = [];
+
+fetch("exercises.json")
+    .then(res => res.json())
+    .then(data => {
+        ExercisesData = data;
+        DataPostProcess();
+    });
 
 let ExercisesBox1 = document.querySelector("#Box1 .containerBox");
 let ExercisesBox2 = document.querySelector("#Box2 .containerBox");
@@ -136,36 +145,38 @@ let CorrectButtonType2 = document.querySelector("#Button2");
 let output1 = "";
 let output2 = "";
 
-for (let exercise of ExercisesData) {
-    switch (exercise.type) {
-        case 1:
-            output1 += `
-                <div class="box" id="n${exercise.id}">
-                    <span class="text">${exercise.text1}</span>
-                    <input class="input" type="text">
-                    <span class="text">${exercise.text2}</span>
-                </div>
-            `;
-            break;
-        case 2:
-            output2 += `
-                <div class="box" id="n${exercise.id}">
-                    <span class="text">${exercise.text}</span>
-                    <input class="input" type="checkbox">
-                </div>
-            `;
-            break;
+function DataPostProcess() {
+    for (let exercise of ExercisesData) {
+        switch (exercise.type) {
+            case 1:
+                output1 += `
+                    <div class="box" id="n${exercise.id}">
+                        <span class="text">${exercise.text1}</span>
+                        <input class="input" type="text">
+                        <span class="text">${exercise.text2}</span>
+                    </div>
+                `;
+                break;
+            case 2:
+                output2 += `
+                    <div class="box" id="n${exercise.id}">
+                        <span class="text">${exercise.text}</span>
+                        <input class="input" type="checkbox">
+                    </div>
+                `;
+                break;
+        }
     }
+    
+    ExercisesBox1.insertAdjacentHTML(`afterbegin`, output1);
+    ExercisesBox2.insertAdjacentHTML(`afterbegin`, output2);
 }
-
-ExercisesBox1.insertAdjacentHTML(`afterbegin`, output1);
-ExercisesBox2.insertAdjacentHTML(`afterbegin`, output2);
 
 CorrectButtonType1.addEventListener("click", (e) => {
     for (let exercise of ExercisesData) {
         if (exercise.type == 1) {
             let box = document.querySelector("#Box1 #n" + exercise.id);
-            let answer = box.querySelector(".input");
+            let answer = box.querySelector(".containerBox .input");
             if (exercise.solution == answer.value) {
                 box.style.backgroundColor = "green";
             } else {
@@ -179,7 +190,7 @@ CorrectButtonType2.addEventListener("click", (e) => {
     for (let exercise of ExercisesData) {
         if (exercise.type == 2) {
             let box = document.querySelector("#Box2 #n" + exercise.id);
-            let answer = box.querySelector(".input");
+            let answer = box.querySelector(".containerBox .input");
             if (exercise.solution == answer.checked) {
                 box.style.backgroundColor = "green";
             } else {
