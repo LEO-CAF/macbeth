@@ -8,7 +8,7 @@
 }
 
 :root {
-    --numberOfPetals: 6;
+    --numberOfPetals: 5;
     --primaryColor: blue;
     --secondaryColor: skyblue;
     --tertiaryColor: black;
@@ -193,12 +193,11 @@ footer span {
     justify-content: start;
 }
 
-#selector .selectorBox:nth-of-type(1) { rotate: calc(360 / var(--numberOfPetals) * 1deg); }
-#selector .selectorBox:nth-of-type(2) { rotate: calc(360 / var(--numberOfPetals) * 2deg); }
-#selector .selectorBox:nth-of-type(3) { rotate: calc(360 / var(--numberOfPetals) * 3deg); }
-#selector .selectorBox:nth-of-type(4) { rotate: calc(360 / var(--numberOfPetals) * 4deg); }
-#selector .selectorBox:nth-of-type(5) { rotate: calc(360 / var(--numberOfPetals) * 5deg); }
-#selector .selectorBox:nth-of-type(6) { rotate: calc(360 / var(--numberOfPetals) * 6deg); }
+#selector .selectorBox:nth-of-type(1) { rotate: calc(360 / var(--numberOfPetals) * 0deg + 90deg); }
+#selector .selectorBox:nth-of-type(2) { rotate: calc(360 / var(--numberOfPetals) * 1deg + 90deg); }
+#selector .selectorBox:nth-of-type(3) { rotate: calc(360 / var(--numberOfPetals) * 2deg + 90deg); }
+#selector .selectorBox:nth-of-type(4) { rotate: calc(360 / var(--numberOfPetals) * 3deg + 90deg); }
+#selector .selectorBox:nth-of-type(5) { rotate: calc(360 / var(--numberOfPetals) * 4deg + 90deg); }
 
 #selector .selectorBox:hover {
     background-color: whitesmoke;
@@ -250,8 +249,14 @@ footer span {
     justify-content: center;
 }
 
+.page .text {
+    font-size: 3vh;
+    color: black;
+}
+
 .page .title .text {
     font-size: 4vh;
+    color: white;
     text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
 }
 
@@ -262,11 +267,6 @@ footer span {
     height: calc(80vh - 7.5vh);
 
     overflow: auto;
-}
-
-#history .content .text {
-    font-size: 3vh;
-    text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
 }
 
 /* VIDEOS */
@@ -309,11 +309,6 @@ footer span {
     justify-content: start;
 }
 
-#exercises .page .containerBox .box .text {
-    font-size: 3vh;
-    text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
-}
-
 #exercises .page .containerBox .box .input {
     width: 10vh;
     height: 3vh;
@@ -336,6 +331,9 @@ footer span {
     width: 14vh;
     height: 5vh;
 
-    font-size: 3vh;
-    text-shadow: var(--textBorder) var(--textBorder) 0 black, calc(-1 * var(--textBorder)) calc(-1 * var(--textBorder)) 0 black, calc(-1 * var(--textBorder)) var(--textBorder) 0 black, var(--textBorder) calc(-1 * var(--textBorder)) 0 black, var(--textBorder) 0 0 black, calc(-1 * var(--textBorder)) 0 0 black, 0 var(--textBorder) 0 black, 0 calc(-1 * var(--textBorder)) 0 black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* OTHERS */

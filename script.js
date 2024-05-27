@@ -39,7 +39,7 @@ let RightButton = document.querySelector("#rightButton");
 
 let currentPage = 0;
 let currentMenu = 0;
-let pageNumberInMenu = [2, 2, 2];
+let pageNumberInMenu = [6, 2, 2];
 
 ShowCorrectPageInMenu();
 
@@ -66,24 +66,24 @@ RightButton.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", function(event) {
-    if (event.key === "ArrowUp" || event.key === "w") {
+    if (event.key === "ArrowUp" || (event.key === "w" && currentMenu != 2)) {
         if (currentMenu == 1) {
             HistoryMenu();
         } else if (currentMenu == 2) {
             VideosMenu();
         }
     }
-    if (event.key === "ArrowDown" || event.key === "s") {
+    if (event.key === "ArrowDown" || (event.key === "s" && currentMenu != 2)) {
         if (currentMenu == 0) {
             VideosMenu();
         } else if (currentMenu == 1) {
             ExercisesMenu();
         }
     }
-    if (event.key === "ArrowLeft" || event.key === "a") {
+    if (event.key === "ArrowLeft" || (event.key === "a" && currentMenu != 2)) {
         LeftPage();
     }
-    if (event.key === "ArrowRight" || event.key === "d") {
+    if (event.key === "ArrowRight" || (event.key === "d" && currentMenu != 2)) {
         RightPage();
     }
 });
@@ -122,6 +122,20 @@ function RightPage() {
         ShowCorrectPageInMenu();
     }
 }
+
+/* HISTORY */
+
+let Act1Button = document.querySelector("#selector .selectorBox:nth-of-type(1)");
+let Act2Button = document.querySelector("#selector .selectorBox:nth-of-type(2)");
+let Act3Button = document.querySelector("#selector .selectorBox:nth-of-type(3)");
+let Act4Button = document.querySelector("#selector .selectorBox:nth-of-type(4)");
+let Act5Button = document.querySelector("#selector .selectorBox:nth-of-type(5)");
+
+Act1Button.addEventListener("click", (e) => { currentPage = 1; ShowCorrectPageInMenu(); });
+Act2Button.addEventListener("click", (e) => { currentPage = 2; ShowCorrectPageInMenu(); });
+Act3Button.addEventListener("click", (e) => { currentPage = 3; ShowCorrectPageInMenu(); });
+Act4Button.addEventListener("click", (e) => { currentPage = 4; ShowCorrectPageInMenu(); });
+Act5Button.addEventListener("click", (e) => { currentPage = 5; ShowCorrectPageInMenu(); });
 
 /* EXERCISES */
 
@@ -199,3 +213,41 @@ CorrectButtonType2.addEventListener("click", (e) => {
         }
     }
 });
+
+/* ARROW */
+
+/*function getCoords(elem) {
+    const box = elem.getBoundingClientRect();
+    return {
+        top: box.top + window.scrollY,
+        left: box.left + window.scrollX
+    };
+}
+
+function updateArrow() {
+    const start = document.getElementById("start");
+    const end = document.getElementById("end");
+    const arrowLine = document.getElementById("arrowLine");
+
+    const startCoords = getCoords(start);
+    const endCoords = getCoords(end);
+
+    const x1 = startCoords.left + start.offsetWidth;
+    const y1 = startCoords.top + start.offsetHeight;
+    const x2 = endCoords.left;
+    const y2 = endCoords.top;
+
+    arrowLine.setAttribute('x1', x1);
+    arrowLine.setAttribute('y1', y1);
+    arrowLine.setAttribute('x2', x2);
+    arrowLine.setAttribute('y2', y2);
+}
+
+window.addEventListener('load', updateArrow);
+window.addEventListener('resize', updateArrow);*/
+
+/* OTHERS */
+
+let FooterBox = document.querySelector("footer");
+
+FooterBox.addEventListener("click", (e) => { window.open("https://github.com/LEO-CAF/macbeth", "_blank"); });
